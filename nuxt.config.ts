@@ -1,5 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-
+import tailwindcss from "@tailwindcss/vite";
 export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
   devtools: { enabled: true },
@@ -17,7 +17,11 @@ export default defineNuxtConfig({
     optimizeDeps: {
       include: ["@vue/devtools-core", "@vue/devtools-kit"],
     },
+    plugins: [tailwindcss()],
   },
 
   modules: ["@nuxt/ui"],
+  colorMode: {
+    preference: "system", // default value is 'system'
+  },
 });
